@@ -15,7 +15,6 @@ http.createServer(function (req, res) {
         res.end();
     });
 }).listen(port); 
-
 //server.listen(port, function (error) {
 //    if (error) {
 //        console.log('Error something went wrong: ', error);
