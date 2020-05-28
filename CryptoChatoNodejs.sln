@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "CryptoChatoNodejs", "CryptoChatoNodejs\CryptoChatoNodejs.njsproj", "{79D6F284-1D48-4AD1-B4A1-E7BB7A56666E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{79D6F284-1D48-4AD1-B4A1-E7BB7A56666E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79D6F284-1D48-4AD1-B4A1-E7BB7A56666E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79D6F284-1D48-4AD1-B4A1-E7BB7A56666E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79D6F284-1D48-4AD1-B4A1-E7BB7A56666E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AE42AC35-1EA7-42A6-AA75-F2C353056E67}
+	EndGlobalSection
+EndGlobal

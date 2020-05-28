@@ -1,0 +1,29 @@
+﻿.main-container {
+    display: grid;
+    grid-template-rows: 70% 30%
+}
+
+.main-container-item {
+}
+
+.chatbox {
+    color: green;
+    border: 2px solid black;
+}
+
+.messagebox {
+    color: red;
+    border: 2px solid black;
+}
+
+.chatpartner-1 {
+    color: mediumorchid;
+}
+
+.chatpartner-2 {
+    color: deepskyblue;
+}
+
+h1 {
+    color: blue;
+}

@@ -1,0 +1,19 @@
+{
+  "name": "crypto-chato-nodejs",
+  "version": "0.0.0",
+  "description": "CryptoChatoNodejs",
+  "main": "server.js",
+  "scripts": {
+    "devStart": "nodemon socketserver.js",
+    "devStart2": "nodemon server.js"
+  },
+  "author": {
+    "name": ""
+  },
+  "dependencies": {
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

@@ -1,0 +1,3 @@
+C:\Users\mathe\source\repos\CryptoChatoNodejs\CryptoChatoNodejs\obj\Debug\CryptoChatoNodejs.njsprojAssemblyReference.cache
+C:\Users\mathe\source\repos\CryptoChatoNodejs\CryptoChatoNodejs\obj\Debug\CryptoChatoNodejs.njsproj.CoreCompileInputs.cache
+C:\Users\mathe\source\repos\CryptoChatoNodejs\CryptoChatoNodejs\bin\Microsoft.NodejsTools.WebRole.dll

@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../Page123.css" runat="server">
+    <script defer src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script defer src="https://www.jsviews.com/download/jsrender.min.js"></script>
+    <meta charset="utf-8" />
+    <title>CryptoChat</title>
+    <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script defer src="Script.js"></script>
+</head>
+<body>
+
+    <h1>CryptoChat</h1>
+
+    <div class="main-container">
+
+        <!--
+            This will be a Collection of Data
+            0.1 Version:
+            0.1 Version:
+            The Data will include:
+              - ID (If the Text came from you or from textpartner)
+              - Text (self explaining)
+
+            0.2 Version:
+            -->
+        <div class="chatbox">
+            Chat Box
+            <br> <br>
+            <div id="messages"></div>
+            <br>
+        </div>
+
+        <!--
+            This will be a Form
+            0.1 Version:
+            It gets added as div into chatbox.
+
+            0.2 Version:
+            its gets pinged to sharepoint and back again to the site where its being added to the chatbox div.
+            -->
+        <div class="messagebox">
+            Message Box
+            <br>
+            <form id="messageForm">
+                <div class="container-messagebox">
+                    <textarea id="msg" name="msg" rows="4" cols="50" placeholder="Write Message here.."></textarea>
+                    <fieldset>
+                        <input type="radio" id="cp1" value="1" name="chatpartner" />
+                        <label for="cp1">Chatpartner 1</label>
+                        <input type="radio" id="cp2" value="2" name="chatpartner" />
+                        <label for="cp2">Chatpartner 2</label>
+                    </fieldset>
+                </div>
+                <input type="submit" value="Send">
+            </form>
+            <button id="clearStorage"> Clear </button>
+        </div>
+    </div>
+    <script>
+        console.log("it worked!");
+    </script>
+    <script id="msgTmpl" type="text/x-jsrender">
+        <div>
+            <em class="{{if cp==1}}chatpartner-1{{else cp==2}}chatpartner-2{{/if}}">{{: message }} -//- {{:time}}</em>
+        </div>
+    </script>
+</body>
+</html>
