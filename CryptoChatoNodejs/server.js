@@ -1,9 +1,13 @@
 const express = require('express');
-const app = express();
 const path = require('path');
+const socket = require('socket.io');
+
+const app = express();
+
+// express stuff
 
 app.use(loggingMiddleware);
-app.use('/data', express.static('public'));
+app.use('/data', express.static('directory'));
 
 app.get('/', (req, res) => {
     //res.send('Home Page');
@@ -17,7 +21,6 @@ app.get('/users', authorizeUsersAccess, (req, res) => {
 
 function loggingMiddleware(req, res, next) {
     console.log(`${new Date().toISOString()}: ${req.originalUrl}`);
-    console.log('Inside Middleware');
     next();
 }
 
@@ -34,8 +37,43 @@ function middlewareFunction(req, res, next) {
     next();
 }
 
-app.listen(3005, () => console.log('Server Started'));
+var server = app.listen(3005, () => console.log('Server Started'));
 
+var io = socket(server);
+
+// socket stuff
+
+const users = {};
+const userColors = {};
+
+io.on('connection', socket => {
+    // broadcasts a msg
+    socket.on('send-chat-message', msg => {
+        socket.broadcast.emit('chat-message', { msg: msg, name: users[socket.id], color: userColors[socket.id] });
+    }); 
+    // connects the name to socket id and broadcasts a msg
+    socket.on('new-user', name => {
+        users[socket.id] = name;
+        userColors[socket.id] = randomColor();
+        socket.broadcast.emit('user-connected', name);
+    })
+    socket.on('disconnect', () => {
+        socket.broadcast.emit('user-disconnected', users[socket.id]);
+        delete users[socket.id];
+        delete userColors[socket.id];
+    })
+})
+
+function randomColor() {
+    var color;
+    var rndm = Math.floor(Math.random() * Math.floor(5));
+    if (rndm == 0) color = "#0074D9";
+    if (rndm == 1) color = "#3D9970";
+    if (rndm == 2) color = "#FF851B";
+    if (rndm == 3) color = "#AAAAAA";
+    if (rndm == 4) color = "#85144b";
+    return color;
+}
 
 //'use strict';
 //var http = require('http');
